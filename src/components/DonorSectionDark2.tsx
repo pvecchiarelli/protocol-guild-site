@@ -69,7 +69,7 @@ const partners = [
   { name: 'EigenLayer', logo: eigenlayerSvg, logoWhite: eigenlayerWhiteSvg, url: 'https://eigenlayer.xyz' },
   { name: 'PWN Dao', logo: pwnSvg, logoWhite: pwnWhiteSvg, url: 'https://pwn.xyz/' },
   { name: 'Puffer', logo: pufferSvg, logoWhite: pufferWhiteSvg, url: 'https://puffer.fi' },
-  { name: 'Shutter', logo: shutterSvg, logoWhite: shutterWhiteSvg, url: 'https://shutter.network/' }
+  { name: 'Shutter DAO 0x36', logo: shutterSvg, logoWhite: shutterWhiteSvg, url: 'https://shutter.network/' }
 
 ]
 
