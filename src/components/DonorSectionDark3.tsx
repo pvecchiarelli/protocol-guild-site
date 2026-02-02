@@ -59,7 +59,7 @@ import statefulWorksWhiteSvg from '../assets/images/donors/statefulworks-white.s
 import vanEckSvg from '../assets/images/donors/vaneck.svg'
 import vanEckWhiteSvg from '../assets/images/donors/vaneck-white.svg'
 import aaveSvg from '../assets/images/donors/aave.svg'
-import aaveSvg from '../assets/images/donors/aave-white.svg'
+import aaveWhiteSvg from '../assets/images/donors/aave-white.svg'
 
 const partners = [
 ]
