@@ -12,6 +12,8 @@ import pwnSvg from '../assets/images/donors/pwn.svg'
 import pwnWhiteSvg from '../assets/images/donors/pwn-white.svg'
 import pufferSvg from '../assets/images/donors/puffer.svg'
 import pufferWhiteSvg from '../assets/images/donors/puffer-white.svg'
+import shutterSvg from '../assets/images/donors/shutter.svg'
+import shutterWhiteSvg from '../assets/images/donors/shutter-white.svg'
 
 // Donors
 import layerzeroSvg from '../assets/images/donors/layerzero.svg'
@@ -56,35 +58,39 @@ import statefulWorksSvg from '../assets/images/donors/statefulworks.svg'
 import statefulWorksWhiteSvg from '../assets/images/donors/statefulworks-white.svg'
 import vanEckSvg from '../assets/images/donors/vaneck.svg'
 import vanEckWhiteSvg from '../assets/images/donors/vaneck-white.svg'
+import aaveSvg from '../assets/images/donors/aave.svg'
+import aaveSvg from '../assets/images/donors/aave-white.svg'
 
 const partners = [
 ]
 
 const donors = [
   { name: 'EigenLayer', logo: eigenlayerSvg, logoWhite: eigenlayerWhiteSvg, url: 'https://eigenlayer.xyz' },
-  { name: 'Taiko', logo: taikoSvg, logoWhite: taikoWhiteSvg, url: 'https://taiko.xyz' },
   { name: 'Ether.fi', logo: etherfiSvg, logoWhite: etherfiWhiteSvg, url: 'https://ether.fi' },
+  { name: 'Taiko', logo: taikoSvg, logoWhite: taikoWhiteSvg, url: 'https://taiko.xyz' },
   { name: 'LayerZero', logo: layerzeroSvg, logoWhite: layerzeroWhiteSvg, url: 'https://layerzero.network' },
   { name: 'Puffer', logo: pufferSvg, logoWhite: pufferWhiteSvg, url: 'https://puffer.fi' },
-  { name: 'Optimism', logo: optimismSvg, logoWhite: optimismWhiteSvg, url: 'https://optimism.io' },
-  { name: 'ZKSync', logo: zksyncSvg, logoWhite: zksyncWhiteSvg, url: 'https://zksync.io' },
-  { name: 'Scroll', logo: scrollSvg, logoWhite: scrollWhiteSvg, url: 'https://scroll.io' },
-  { name: 'Starknet', logo: starknetSvg, logoWhite: starknetWhiteSvg, url: 'https://starknet.io' },
-  { name: 'ENS', logo: ensSvg, logoWhite: ensWhiteSvg, url: 'https://ens.domains' },
-  { name: 'Octant', logo: octantSvg, logoWhite: octantWhiteSvg, url: 'https://octant.io' },
-  { name: 'SAFE DAO', logo: safeSvg, logoWhite: safeWhiteSvg, url: 'https://docs.safe.global/safenet/protocol/safe-dao' },
-  { name: 'Bitwise', logo: bitwiseSvg, logoWhite: bitwiseWhiteSvg, url: 'https://bitwiseinvestments.com/' },
-  { name: 'Gitcoin', logo: gitcoinSvg, logoWhite: gitcoinWhiteSvg, url: 'https://gitcoin.co' },
   { name: 'Arbitrum', logo: arbitrumSvg, logoWhite: arbitrumWhiteSvg, url: 'https://arbitrum.io/community' },
+  { name: 'Optimism', logo: optimismSvg, logoWhite: optimismWhiteSvg, url: 'https://optimism.io' },
   { name: 'Lido', logo: lidoSvg, logoWhite: lidoWhiteSvg, url: 'https://lido.fi' },
   { name: 'Uniswap', logo: uniswapSvg, logoWhite: uniswapWhiteSvg, url: 'https://uniswap.org' },
+  { name: 'ENS', logo: ensSvg, logoWhite: ensWhiteSvg, url: 'https://ens.domains' },
+  { name: 'Starknet', logo: starknetSvg, logoWhite: starknetWhiteSvg, url: 'https://www.starknet.io/' },
+  { name: 'ZKSync', logo: zksyncSvg, logoWhite: zksyncWhiteSvg, url: 'https://zksync.io' },
   { name: 'MolochDAO', logo: molochSvg, logoWhite: molochWhiteSvg, url: 'https://molochdao.com' },
+  { name: 'Octant', logo: octantSvg, logoWhite: octantWhiteSvg, url: 'https://octant.io' },
   { name: 'NounsDAO', logo: nounsSvg, logoWhite: nounsWhiteSvg, url: 'https://nouns.wtf' },
+  { name: 'SAFE DAO', logo: safeSvg, logoWhite: safeWhiteSvg, url: 'https://docs.safe.global/safenet/protocol/safe-dao' },
+  { name: 'Scroll', logo: scrollSvg, logoWhite: scrollWhiteSvg, url: 'https://scroll.io' },
   { name: 'Lambda Class', logo: lambdaClassSvg, logoWhite: lambdaClassWhiteSvg, url: 'https://lambdaclass.com' },
   { name: 'Tetranode', logo: tetranodeSvg, logoWhite: tetranodeWhiteSvg, url: 'https://x.com/Tetranode' },
   { name: 'Anthony Sassano', logo: anthonySassanoSvg, logoWhite: anthonySassanoWhiteSvg, url: 'https://x.com/sassal0x' },
-  { name: 'Drips', logo: dripsSvg, logoWhite: dripsWhiteSvg, url: 'https://drips.network' },
   { name: 'Stateful Works', logo: statefulWorksSvg, logoWhite: statefulWorksWhiteSvg, url: 'https://x.com/StatefulWorks' },
+  { name: 'Aave', logo: aaveSvg, logoWhite: aaveWhiteSvg, url: 'https://aave.com/' },
+  { name: 'Bitwise', logo: bitwiseSvg, logoWhite: bitwiseWhiteSvg, url: 'https://bitwiseinvestments.com/' },
+  { name: 'Gitcoin', logo: gitcoinSvg, logoWhite: gitcoinWhiteSvg, url: 'https://gitcoin.co' },
+  { name: 'Shutter DAO 0x36', logo: shutterSvg, logoWhite: shutterWhiteSvg, url: 'https://shutter.network/' },
+  { name: 'Drips', logo: dripsSvg, logoWhite: dripsWhiteSvg, url: 'https://drips.network' },
   { name: 'VanEck', logo: vanEckSvg, logoWhite: vanEckWhiteSvg, url: 'https://www.vaneck.com/us/en/insights/digital-assets/' }
 ]
 
