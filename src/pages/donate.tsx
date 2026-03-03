@@ -13,6 +13,7 @@ import chainsImage from '../assets/images/chains.png'
 import DuneStat from '../components/DuneStat'
 import authorImage from '../assets/images/EigenLayer.png'
 import DonationWidget from '../components/DonationWidget'
+import PartnerProgramsSection from '../components/PartnerProgramsSection'
 
 const Donate: FC = () => {
   const [currentQuote, setCurrentQuote] = useState(0)
@@ -364,6 +365,50 @@ const Donate: FC = () => {
           </Grid>
         </Section.Row>
       </Section>
+      {/* Partner Programs */}
+      <Section background="white" divider="var(--brand-primary)" line={true}>
+        <Section.Row align="start">
+          <Grid columns={12} className="py-16">
+            <Grid.Item span={12}>
+              <PartnerProgramsSection />
+            </Grid.Item>
+          </Grid>
+        </Section.Row>
+      </Section>
+
+      {/* Infinite Endowment teaser */}
+      <Section background="white" divider="var(--brand-primary)" line={true}>
+        <Section.Row align="start">
+          <Grid columns={12} className="py-16">
+            <Grid.Item span={12}>
+              <div className="rounded-2xl border border-[var(--brand-primary)] bg-white p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                <div className="flex flex-col gap-2 max-w-xl">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[var(--brand-primary)] text-[var(--gray-dark)]">
+                      In Development
+                    </span>
+                  </div>
+                  <h2 className="text-2xl font-bold text-[var(--gray-dark)] leading-tight">
+                    Infinite Endowment
+                  </h2>
+                  <p className="text-base text-[var(--gray-mid)] leading-relaxed">
+                    Deposit once, fund Ethereum core development forever. The vault preserves your
+                    principal while directing yield to Protocol Guild — a perpetual, self-sustaining
+                    contribution stream.
+                  </p>
+                </div>
+                <a
+                  href="/endowment"
+                  className="shrink-0 !bg-[var(--brand-primary)] !border-none text-[var(--gray-dark)] font-semibold px-6 py-3 rounded-lg hover:!opacity-80 transition-opacity no-underline inline-block whitespace-nowrap"
+                >
+                  Learn more →
+                </a>
+              </div>
+            </Grid.Item>
+          </Grid>
+        </Section.Row>
+      </Section>
+
     </main>
   )
 }
