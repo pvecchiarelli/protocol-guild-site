@@ -1,5 +1,9 @@
 import { FC, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
+import HeroHeader from '../components/HeroHeader'
+import Section from '../components/Section'
+import Grid from '../components/Grid'
+import chainsImage from '../assets/images/chains.png'
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -432,85 +436,89 @@ const Endowment: FC = () => {
         />
       </Helmet>
 
-      <div className="min-h-screen bg-[#f0f6fb]">
-        {/* App header */}
-        <div className="bg-white border-b border-[var(--gray-light)]">
-          <div className="max-w-[900px] mx-auto px-6 pt-8 pb-0">
-            {/* Logo + title */}
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-[var(--brand-primary)] flex items-center justify-center shrink-0">
-                <svg width="22" height="22" viewBox="0 0 279 279" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M 40 80 Q 60 60 90 70 L 140 100 L 190 70 Q 220 60 240 80 L 240 100 Q 220 85 195 95 L 140 125 L 85 95 Q 60 85 40 100 Z" fill="white"/>
-                  <path d="M 40 130 Q 60 110 90 120 L 140 150 L 190 120 Q 220 110 240 130 L 240 150 Q 220 135 195 145 L 140 175 L 85 145 Q 60 135 40 150 Z" fill="white"/>
-                  <path d="M 40 180 Q 60 160 90 170 L 140 200 L 190 170 Q 220 160 240 180 L 240 200 Q 220 185 195 195 L 140 225 L 85 195 Q 60 185 40 200 Z" fill="white"/>
-                </svg>
-              </div>
-              <h1 className="text-2xl font-bold text-[var(--gray-dark)]">The Infinite Endowment</h1>
-            </div>
+      {/* Site-standard hero */}
+      <HeroHeader
+        imageSrc={chainsImage}
+        theme="light"
+        paddingBottomClassName="pb-[70px] lg:pb-[160px]"
+      >
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-[-1.44px] text-[var(--gray-dark)] mb-4">
+          The Infinite Endowment
+        </h1>
+        <p className="text-lg leading-[23px] text-[var(--gray-mid)] max-w-xl">
+          Deposit once. Fund Ethereum core development forever. Your principal is preserved —
+          only the yield flows to Protocol Guild.
+        </p>
+      </HeroHeader>
 
-            {/* Tabs */}
-            <div className="flex gap-0">
-              {(['deposit', 'dashboard'] as const).map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-6 py-3 text-sm font-semibold border-none bg-transparent cursor-pointer capitalize transition-colors border-b-2 ${
-                    activeTab === tab
-                      ? 'text-[var(--brand-primary)] border-[var(--brand-primary)]'
-                      : 'text-[var(--gray-mid)] border-transparent hover:text-[var(--gray-dark)]'
-                  }`}
+      {/* Tab nav + app content */}
+      <Section background="white" divider="var(--brand-primary)" line={true}>
+        <Section.Row align="start">
+          <Grid columns={12} className="py-0">
+            <Grid.Item span={12}>
+
+              {/* TVL hero */}
+              <div className="flex flex-col items-center gap-3 py-10 border-b border-[var(--gray-light)]">
+                <p className="text-xs font-bold uppercase tracking-widest text-[var(--gray-mid)]">
+                  Total Value Locked
+                </p>
+                <p className="text-5xl font-bold text-[var(--gray-dark)]">
+                  ${(TVL / 1_000_000).toFixed(1)}m
+                </p>
+                <div className="w-full max-w-[600px] flex flex-col gap-1.5">
+                  <div className="h-2.5 rounded-full bg-blue-100 overflow-hidden">
+                    <div
+                      className="h-full rounded-full bg-[var(--brand-primary)]"
+                      style={{ width: `${tvlPct}%` }}
+                    />
+                  </div>
+                  <div className="flex justify-between text-xs text-[var(--gray-mid)]">
+                    <span>${(TVL / 1_000_000).toFixed(1)}m raised</span>
+                    <span>$1b goal</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Tab nav */}
+              <div className="flex gap-0 border-b border-[var(--gray-light)]">
+                {(['deposit', 'dashboard'] as const).map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className={`px-6 py-4 text-sm font-semibold border-none bg-transparent cursor-pointer capitalize transition-colors border-b-2 -mb-px ${
+                      activeTab === tab
+                        ? 'text-[var(--brand-primary)] border-[var(--brand-primary)]'
+                        : 'text-[var(--gray-mid)] border-transparent hover:text-[var(--gray-dark)]'
+                    }`}
+                  >
+                    {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                  </button>
+                ))}
+              </div>
+
+              {/* Tab content */}
+              <div className="py-10 flex flex-col gap-8">
+                {activeTab === 'deposit' ? <DepositTab /> : <DashboardTab />}
+              </div>
+
+              {/* Footer CTA */}
+              <div className="mb-12 rounded-xl border border-[var(--brand-primary)] bg-white p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div>
+                  <p className="font-semibold text-[var(--gray-dark)]">Interested in a large deposit or partnership?</p>
+                  <p className="text-sm text-[var(--gray-mid)] mt-0.5">Reach out to discuss endowment strategy.</p>
+                </div>
+                <a
+                  href="mailto:contact@protocolguild.org?subject=Infinite%20Endowment%20Interest"
+                  className="shrink-0 !bg-[var(--brand-primary)] !border-none text-[var(--gray-dark)] font-bold px-5 py-2.5 rounded-lg hover:!opacity-80 transition-opacity no-underline text-sm whitespace-nowrap"
                 >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="max-w-[900px] mx-auto px-6 py-8 flex flex-col gap-8">
-
-          {/* TVL hero — shared across both tabs */}
-          <div className="flex flex-col items-center gap-3 py-4">
-            <p className="text-xs font-bold uppercase tracking-widest text-[var(--gray-mid)]">
-              Total Value Locked
-            </p>
-            <p className="text-5xl font-bold text-[var(--gray-dark)]">
-              ${(TVL / 1_000_000).toFixed(1)}m
-            </p>
-            {/* Progress bar */}
-            <div className="w-full max-w-[600px] flex flex-col gap-1.5">
-              <div className="h-2.5 rounded-full bg-blue-100 overflow-hidden">
-                <div
-                  className="h-full rounded-full bg-[var(--brand-primary)]"
-                  style={{ width: `${tvlPct}%` }}
-                />
+                  Get in Touch →
+                </a>
               </div>
-              <div className="flex justify-between text-xs text-[var(--gray-mid)]">
-                <span>${(TVL / 1_000_000).toFixed(1)}m raised</span>
-                <span>$1b goal</span>
-              </div>
-            </div>
-          </div>
 
-          {/* Tab content */}
-          {activeTab === 'deposit' ? <DepositTab /> : <DashboardTab />}
-
-          {/* Footer CTA */}
-          <div className="rounded-xl border border-[var(--brand-primary)] bg-white p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div>
-              <p className="font-semibold text-[var(--gray-dark)]">Interested in a large deposit or partnership?</p>
-              <p className="text-sm text-[var(--gray-mid)] mt-0.5">Reach out to discuss endowment strategy.</p>
-            </div>
-            <a
-              href="mailto:contact@protocolguild.org?subject=Infinite%20Endowment%20Interest"
-              className="shrink-0 !bg-[var(--brand-primary)] !border-none text-[var(--gray-dark)] font-bold px-5 py-2.5 rounded-lg hover:!opacity-80 transition-opacity no-underline text-sm whitespace-nowrap"
-            >
-              Get in Touch →
-            </a>
-          </div>
-        </div>
-      </div>
+            </Grid.Item>
+          </Grid>
+        </Section.Row>
+      </Section>
     </main>
   )
 }
