@@ -21,6 +21,25 @@ const DevconLogo: FC = () => (
   </svg>
 )
 
+const EthPragueLogo: FC = () => (
+  <svg viewBox="0 0 130 36" xmlns="http://www.w3.org/2000/svg" aria-label="ETHPrague" className="h-full w-auto">
+    <g transform="translate(0, 2)">
+      <polygon points="13,0 18,10 13,13 8,10" fill="#FF4C00" opacity="0.9" />
+      <polygon points="13,13 18,10 13,26 8,10" fill="#FF4C00" opacity="0.5" />
+      <polygon points="13,0 8,10 13,13" fill="white" opacity="0.3" />
+    </g>
+    <text x="26" y="22" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="800" fontSize="14" letterSpacing="-0.4" fill="#333333">ETHPrague</text>
+  </svg>
+)
+
+const DappConLogo: FC = () => (
+  <svg viewBox="0 0 110 36" xmlns="http://www.w3.org/2000/svg" aria-label="DappCon" className="h-full w-auto">
+    <rect x="2" y="4" width="20" height="20" rx="5" fill="#333333" />
+    <text x="4" y="18" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="800" fontSize="11" fill="white">D</text>
+    <text x="29" y="22" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="700" fontSize="15" letterSpacing="-0.3" fill="#333333">DappCon</text>
+  </svg>
+)
+
 const KeycardLogo: FC = () => (
   <svg viewBox="0 0 110 36" xmlns="http://www.w3.org/2000/svg" aria-label="Keycard" className="h-full w-auto">
     <rect x="2"  y="10" width="26" height="17" rx="3.5" fill="#2ECC8A" opacity="0.3" />
@@ -32,9 +51,11 @@ const KeycardLogo: FC = () => (
 )
 
 const partners = [
-  { id: 'ethcc',   Logo: EthCCLogo,   label: 'Conference ticket' },
-  { id: 'devcon',  Logo: DevconLogo,  label: 'Conference ticket' },
-  { id: 'keycard', Logo: KeycardLogo, label: 'Hardware wallet'   },
+  { id: 'ethcc',     Logo: EthCCLogo,     label: 'Conference ticket' },
+  { id: 'devcon',    Logo: DevconLogo,    label: 'Conference ticket' },
+  { id: 'ethprague', Logo: EthPragueLogo, label: 'Conference ticket' },
+  { id: 'dappcon',   Logo: DappConLogo,   label: 'Conference ticket' },
+  { id: 'keycard',   Logo: KeycardLogo,   label: 'Hardware wallet'   },
 ]
 
 const InKindAppreciation: FC = () => (
