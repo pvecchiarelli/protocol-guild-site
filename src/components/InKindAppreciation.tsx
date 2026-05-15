@@ -41,32 +41,30 @@ const InKindAppreciation: FC = () => (
   <div className="donors border-t border-[var(--gray-light)] pt-4 pb-0">
     <div className="flex flex-row justify-between items-center w-full mb-6">
       <p className="text-[15px] font-medium text-[var(--gray-dark)] uppercase tracking-wide">
-        In-kind partners
+        Member perks
       </p>
       <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[#e8f8fd] text-[#0e7fa8] border border-[#9de0f5]">
         Protocol Guild members
       </span>
     </div>
 
-    <div className="silver-gradient silver-shimmer rounded-xl p-8">
-      <div className="flex flex-wrap justify-center gap-10">
-        {partners.map(({ id, Logo, label }) => (
-          <div key={id} className="flex flex-col items-center gap-2">
-            <div className="h-8 md:h-10 flex items-center">
-              <Logo />
-            </div>
-            <span className="text-xs text-[var(--gray-mid)]">{label}</span>
+    <div className="flex flex-wrap gap-10 items-center py-4">
+      {partners.map(({ id, Logo, label }) => (
+        <div key={id} className="flex flex-col gap-2">
+          <div className="h-8 md:h-10 flex items-center">
+            <Logo />
           </div>
-        ))}
-      </div>
+          <span className="text-xs text-[var(--gray-mid)]">{label}</span>
+        </div>
+      ))}
     </div>
 
-    <div className="mt-4 text-right">
+    <div className="mt-2 text-right">
       <a
-        href="mailto:contact@protocolguild.org?subject=In-Kind%20Partner%20Inquiry"
+        href="mailto:contact@protocolguild.org?subject=Member%20Perks%20Inquiry"
         className="text-sm text-[var(--gray-mid)] hover:opacity-70 underline"
       >
-        Become an in-kind partner →
+        Offer a member perk →
       </a>
     </div>
   </div>
