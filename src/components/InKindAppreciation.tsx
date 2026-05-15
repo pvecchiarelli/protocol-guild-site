@@ -60,10 +60,13 @@ const partners = [
 
 const InKindAppreciation: FC = () => (
   <div className="donors pt-4 pb-0">
-    <div className="mb-6">
+    <div className="mb-6 flex flex-col gap-2">
       <h2 className="text-3xl font-bold leading-[1.1] text-[var(--gray-dark)]">
         Partner perks
       </h2>
+      <p className="text-lg leading-[24px] text-[var(--gray-mid)]">
+        Protocol Guild partners offer complimentary benefits to active guild members — from conference tickets to hardware wallets.
+      </p>
     </div>
 
     <div className="flex flex-wrap gap-x-10 gap-y-6 items-start py-4">
