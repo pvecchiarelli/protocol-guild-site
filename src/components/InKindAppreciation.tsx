@@ -59,14 +59,11 @@ const partners = [
 ]
 
 const InKindAppreciation: FC = () => (
-  <div className="donors border-t border-[var(--gray-light)] pt-4 pb-0">
-    <div className="flex flex-row justify-between items-center w-full mb-6">
-      <p className="text-[15px] font-medium text-[var(--gray-dark)]">
+  <div className="donors pt-4 pb-0">
+    <div className="mb-6">
+      <p className="text-[15px] font-bold text-[var(--gray-dark)]">
         PARTNER PERKS
       </p>
-      <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[#e8f8fd] text-[#0e7fa8] border border-[#9de0f5]">
-        Protocol Guild members
-      </span>
     </div>
 
     <div className="flex flex-wrap gap-x-10 gap-y-6 items-start py-4">
@@ -85,7 +82,7 @@ const InKindAppreciation: FC = () => (
         href="mailto:contact@protocolguild.org?subject=Member%20Perks%20Inquiry"
         className="text-sm text-[var(--gray-mid)] hover:opacity-70 underline"
       >
-        Offer a member perk →
+        Offer Protocol Guild Members a perk →
       </a>
     </div>
   </div>
