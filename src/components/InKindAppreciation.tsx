@@ -61,9 +61,9 @@ const partners = [
 const InKindAppreciation: FC = () => (
   <div className="donors pt-4 pb-0">
     <div className="mb-6">
-      <p className="text-[15px] font-bold text-[var(--gray-dark)]">
-        PARTNER PERKS
-      </p>
+      <h2 className="text-3xl font-bold leading-[1.1] text-[var(--gray-dark)]">
+        Partner perks
+      </h2>
     </div>
 
     <div className="flex flex-wrap gap-x-10 gap-y-6 items-start py-4">
