@@ -61,8 +61,8 @@ const partners = [
 const InKindAppreciation: FC = () => (
   <div className="donors border-t border-[var(--gray-light)] pt-4 pb-0">
     <div className="flex flex-row justify-between items-center w-full mb-6">
-      <p className="text-[15px] font-medium text-[var(--gray-dark)] uppercase tracking-wide">
-        Member perks
+      <p className="text-[15px] font-medium text-[var(--gray-dark)]">
+        PARTNER PERKS
       </p>
       <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[#e8f8fd] text-[#0e7fa8] border border-[#9de0f5]">
         Protocol Guild members
