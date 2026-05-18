@@ -2,84 +2,114 @@ import { FC } from 'react'
 
 /* ─── Conference / hardware logos ────────────────────────────────────────── */
 
+// Split diamond: blue upper half with hollow inner diamond, red/pink lower half
 const EthCCLogo: FC = () => (
-  <svg viewBox="0 0 100 36" xmlns="http://www.w3.org/2000/svg" aria-label="EthCC" className="h-full w-auto">
-    <g transform="translate(0, 2)">
-      <polygon points="13,0 18,10 13,13 8,10" fill="#3CBEED" opacity="0.9" />
-      <polygon points="13,13 18,10 13,26 8,10" fill="#3CBEED" opacity="0.5" />
-      <polygon points="13,0 8,10 13,13" fill="white" opacity="0.3" />
-    </g>
-    <text x="26" y="22" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="800" fontSize="16" letterSpacing="-0.5" fill="#333333">EthCC</text>
+  <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-label="EthCC" className="h-full w-auto">
+    <clipPath id="top-half"><rect x="0" y="0" width="60" height="30" /></clipPath>
+    <clipPath id="bot-half"><rect x="0" y="30" width="60" height="30" /></clipPath>
+    {/* Outer diamond */}
+    <polygon points="30,4 56,30 30,56 4,30" fill="#3B6FE0" clipPath="url(#top-half)" />
+    <polygon points="30,4 56,30 30,56 4,30" fill="#E84C6A" clipPath="url(#bot-half)" />
+    {/* Inner hollow diamond cutout */}
+    <polygon points="30,14 46,30 30,46 14,30" fill="white" opacity="0.25" />
+    <polygon points="30,14 46,30 30,46 14,30" fill="none" stroke="white" strokeWidth="2" />
   </svg>
 )
 
-const DevconLogo: FC = () => (
-  <svg viewBox="0 0 110 36" xmlns="http://www.w3.org/2000/svg" aria-label="Devcon" className="h-full w-auto">
-    <g transform="translate(2, 4)">
-      <rect x="0" y="0" width="3.5" height="24" rx="1.75" fill="#1a1a1a" />
-      <path d="M3.5 0 Q24 0 24 12 Q24 24 3.5 24" fill="none" stroke="#1a1a1a" strokeWidth="3.5" strokeLinecap="round" />
-    </g>
-    <text x="34" y="23" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="700" fontSize="15" letterSpacing="-0.3" fill="#1a1a1a">devcon</text>
-  </svg>
-)
-
+// Bold blocky ETH PRAGUE 2026 wordmark
 const EthPragueLogo: FC = () => (
-  <svg viewBox="0 0 130 36" xmlns="http://www.w3.org/2000/svg" aria-label="ETHPrague" className="h-full w-auto">
-    <g transform="translate(0, 2)">
-      <polygon points="13,0 18,10 13,13 8,10" fill="#FF4C00" opacity="0.9" />
-      <polygon points="13,13 18,10 13,26 8,10" fill="#FF4C00" opacity="0.5" />
-      <polygon points="13,0 8,10 13,13" fill="white" opacity="0.3" />
-    </g>
-    <text x="26" y="22" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="800" fontSize="14" letterSpacing="-0.4" fill="#333333">ETHPrague</text>
+  <svg viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg" aria-label="ETH Prague 2026" className="h-full w-auto">
+    <text x="0" y="26" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="900" fontSize="22" letterSpacing="-1" fill="#111111">ETH</text>
+    <text x="56" y="22" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="600" fontSize="13" letterSpacing="1" fill="#111111">PRAGUE</text>
+    <text x="56" y="34" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="600" fontSize="13" letterSpacing="1" fill="#111111">2026</text>
   </svg>
 )
 
-const DappConLogo: FC = () => (
-  <svg viewBox="0 0 110 36" xmlns="http://www.w3.org/2000/svg" aria-label="DappCon" className="h-full w-auto">
-    <rect x="2" y="4" width="20" height="20" rx="5" fill="#333333" />
-    <text x="4" y="18" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="800" fontSize="11" fill="white">D</text>
-    <text x="29" y="22" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="700" fontSize="15" letterSpacing="-0.3" fill="#333333">DappCon</text>
+// Devcon VIII India — simplified: Ethereum diamond in deep purple + devcon text
+const DevconLogo: FC = () => (
+  <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg" aria-label="Devcon" className="h-full w-auto">
+    <polygon points="22,2 40,25 22,48 4,25"  fill="#3B2F8C" />
+    <polygon points="22,2 40,25 22,30 4,25"  fill="#6B5ED0" opacity="0.6" />
+    <polygon points="22,30 40,25 22,48 4,25" fill="#E8A040" opacity="0.7" />
+    <text x="48" y="18" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="800" fontSize="15" letterSpacing="2" fill="#3B2F8C">DEV</text>
+    <text x="48" y="34" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="800" fontSize="15" letterSpacing="2" fill="#3B2F8C">CON</text>
+    <text x="48" y="45" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="400" fontSize="9" letterSpacing="1.5" fill="#6B5ED0">VIII · INDIA</text>
   </svg>
 )
 
+// Keycard "Ok" — black box, white O with key descender into k
 const KeycardLogo: FC = () => (
-  <svg viewBox="0 0 110 36" xmlns="http://www.w3.org/2000/svg" aria-label="Keycard" className="h-full w-auto">
-    <rect x="2"  y="10" width="26" height="17" rx="3.5" fill="#2ECC8A" opacity="0.3" />
-    <rect x="5"  y="7"  width="26" height="17" rx="3.5" fill="#2ECC8A" opacity="0.6" />
-    <rect x="8"  y="4"  width="26" height="17" rx="3.5" fill="#2ECC8A" />
-    <rect x="13" y="9"  width="7"  height="5"  rx="1.5" fill="white" opacity="0.9" />
-    <text x="42" y="22" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="700" fontSize="14" letterSpacing="-0.3" fill="#1a1a1a">Keycard</text>
+  <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-label="Keycard" className="h-full w-auto">
+    <rect width="56" height="56" rx="8" fill="#111111" />
+    <circle cx="28" cy="20" r="9" fill="none" stroke="white" strokeWidth="4" />
+    <line x1="28" y1="29" x2="28" y2="44" stroke="white" strokeWidth="4" strokeLinecap="round" />
+    <line x1="22" y1="44" x2="34" y2="44" stroke="white" strokeWidth="3.5" strokeLinecap="round" />
+    <line x1="22" y1="38" x2="28" y2="38" stroke="white" strokeWidth="3.5" strokeLinecap="round" />
+  </svg>
+)
+
+// DappCon — dark circular badge with "DC" mark
+const DappConLogo: FC = () => (
+  <svg viewBox="0 0 110 40" xmlns="http://www.w3.org/2000/svg" aria-label="DappCon" className="h-full w-auto">
+    <circle cx="20" cy="20" r="18" fill="#1a1a1a" />
+    <text x="8" y="26" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="800" fontSize="14" fill="white">DC</text>
+    <text x="46" y="23" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="700" fontSize="14" letterSpacing="-0.3" fill="#1a1a1a">DappCon</text>
   </svg>
 )
 
 /* ─── Audit / infrastructure logos ──────────────────────────────────────── */
 
 const SigmaPrimeLogo: FC = () => (
-  <svg viewBox="0 0 120 36" xmlns="http://www.w3.org/2000/svg" aria-label="Sigma Prime" className="h-full w-auto">
-    <text x="0" y="24" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="700" fontSize="20" fill="#E05A2B">Σ</text>
-    <text x="22" y="22" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="700" fontSize="13" letterSpacing="-0.2" fill="#333333">Sigma Prime</text>
+  <svg viewBox="0 0 130 36" xmlns="http://www.w3.org/2000/svg" aria-label="Sigma Prime" className="h-full w-auto">
+    <text x="0" y="26" fontFamily="Georgia,serif" fontWeight="700" fontSize="24" fill="#E05A2B">Σ</text>
+    <text x="26" y="22" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="700" fontSize="13" letterSpacing="-0.2" fill="#333333">Sigma Prime</text>
   </svg>
 )
 
+// DEDAUB in their angular geometric style
 const DedaubLogo: FC = () => (
-  <svg viewBox="0 0 90 36" xmlns="http://www.w3.org/2000/svg" aria-label="Dedaub" className="h-full w-auto">
-    <rect x="0" y="6" width="22" height="22" rx="4" fill="#1a1a2e" />
-    <text x="3" y="22" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="800" fontSize="12" fill="white">dd</text>
-    <text x="28" y="22" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="700" fontSize="14" letterSpacing="-0.3" fill="#1a1a2e">dedaub</text>
+  <svg viewBox="0 0 110 36" xmlns="http://www.w3.org/2000/svg" aria-label="Dedaub" className="h-full w-auto">
+    <text x="0" y="25" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="900" fontSize="20" letterSpacing="2" fill="#111111">DEDAUB</text>
   </svg>
 )
 
+// Zellic — pinwheel/starburst mark in dark olive + wordmark
 const ZellicLogo: FC = () => (
-  <svg viewBox="0 0 80 36" xmlns="http://www.w3.org/2000/svg" aria-label="Zellic" className="h-full w-auto">
-    <polygon points="0,28 14,8 28,28" fill="none" stroke="#6C47FF" strokeWidth="3" strokeLinejoin="round" />
-    <text x="34" y="23" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="700" fontSize="14" letterSpacing="-0.3" fill="#333333">Zellic</text>
+  <svg viewBox="0 0 100 36" xmlns="http://www.w3.org/2000/svg" aria-label="Zellic" className="h-full w-auto">
+    <g transform="translate(14,18)" stroke="#3A3A28" strokeWidth="2.2" strokeLinecap="round">
+      <line x1="-10" y1="0"   x2="10" y2="0"   transform="rotate(0)"   />
+      <line x1="-10" y1="0"   x2="10" y2="0"   transform="rotate(45)"  />
+      <line x1="-10" y1="0"   x2="10" y2="0"   transform="rotate(90)"  />
+      <line x1="-10" y1="0"   x2="10" y2="0"   transform="rotate(135)" />
+      <line x1="-7"  y1="-7"  x2="7"  y2="7"   transform="rotate(22)"  />
+      <line x1="-7"  y1="-7"  x2="7"  y2="7"   transform="rotate(67)"  />
+      <line x1="-7"  y1="-7"  x2="7"  y2="7"   transform="rotate(112)" />
+      <line x1="-7"  y1="-7"  x2="7"  y2="7"   transform="rotate(157)" />
+    </g>
+    <text x="30" y="23" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="700" fontSize="16" letterSpacing="-0.3" fill="#3A3A28">Zellic</text>
   </svg>
 )
 
+// Red Guild — red geometric lotus/flower
 const RedGuildLogo: FC = () => (
-  <svg viewBox="0 0 100 36" xmlns="http://www.w3.org/2000/svg" aria-label="Red Guild" className="h-full w-auto">
-    <circle cx="12" cy="18" r="10" fill="#CC2929" />
-    <text x="28" y="23" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="700" fontSize="13" letterSpacing="-0.2" fill="#333333">Red Guild</text>
+  <svg viewBox="0 0 110 44" xmlns="http://www.w3.org/2000/svg" aria-label="Red Guild" className="h-full w-auto">
+    <g transform="translate(20,22)">
+      {/* Outer petals */}
+      <polygon points="0,-18 6,-8 0,-4 -6,-8"  fill="#CC2020" />
+      <polygon points="0,-18 6,-8 0,-4 -6,-8"  fill="#CC2020" transform="rotate(60)"  />
+      <polygon points="0,-18 6,-8 0,-4 -6,-8"  fill="#AA1818" transform="rotate(120)" />
+      <polygon points="0,-18 6,-8 0,-4 -6,-8"  fill="#CC2020" transform="rotate(180)" />
+      <polygon points="0,-18 6,-8 0,-4 -6,-8"  fill="#AA1818" transform="rotate(240)" />
+      <polygon points="0,-18 6,-8 0,-4 -6,-8"  fill="#CC2020" transform="rotate(300)" />
+      {/* Inner petals */}
+      <polygon points="0,-11 4,-5 0,-2 -4,-5"  fill="#881010" />
+      <polygon points="0,-11 4,-5 0,-2 -4,-5"  fill="#881010" transform="rotate(60)"  />
+      <polygon points="0,-11 4,-5 0,-2 -4,-5"  fill="#AA1818" transform="rotate(120)" />
+      <polygon points="0,-11 4,-5 0,-2 -4,-5"  fill="#881010" transform="rotate(180)" />
+      <polygon points="0,-11 4,-5 0,-2 -4,-5"  fill="#AA1818" transform="rotate(240)" />
+      <polygon points="0,-11 4,-5 0,-2 -4,-5"  fill="#881010" transform="rotate(300)" />
+    </g>
+    <text x="46" y="26" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="700" fontSize="13" letterSpacing="-0.2" fill="#333333">Red Guild</text>
   </svg>
 )
 
@@ -102,11 +132,11 @@ const perks = [
 ]
 
 const audits = [
-  { id: 'sigmaprime', Logo: SigmaPrimeLogo, label: 'Security review'       },
-  { id: 'dedaub',     Logo: DedaubLogo,     label: 'Security audit'        },
-  { id: 'zellic',     Logo: ZellicLogo,     label: 'Security audit'        },
-  { id: 'redguild',   Logo: RedGuildLogo,   label: 'Security audit'        },
-  { id: 'agora',      Logo: AgoraLogo,      label: 'DAO implementation'    },
+  { id: 'sigmaprime', Logo: SigmaPrimeLogo, label: 'Security review'    },
+  { id: 'dedaub',     Logo: DedaubLogo,     label: 'Security audit'     },
+  { id: 'zellic',     Logo: ZellicLogo,     label: 'Security audit'     },
+  { id: 'redguild',   Logo: RedGuildLogo,   label: 'Security audit'     },
+  { id: 'agora',      Logo: AgoraLogo,      label: 'DAO implementation' },
 ]
 
 /* ─── Component ──────────────────────────────────────────────────────────── */
