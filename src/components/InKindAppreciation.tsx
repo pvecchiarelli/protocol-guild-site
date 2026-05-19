@@ -160,7 +160,10 @@ const Header: FC = () => (
       In-Kind Donations
     </h2>
     <h2 className="!text-lg !font-normal !leading-[24px] !text-[var(--gray-dark)]">
-      While token donations help fund Ethereum's core protocol contributors directly, we also welcome non-financial contributions - gifts or perks ranging from conference tickets to hardware wallets. Anything that helps reward the individuals building Ethereum's core protocol is welcome.
+      While token donations help fund Ethereum's core protocol contributors directly, we also welcome non-financial contributions - gifts or perks ranging from conference tickets to hardware wallets.
+    </h2>
+    <h2 className="!text-lg !font-normal !leading-[24px] !text-[var(--gray-dark)]">
+      Anything that helps reward the individuals building Ethereum's core protocol is welcome.
     </h2>
     <a
       href="mailto:contact@protocolguild.org?subject=In-Kind%20Donation%20Inquiry"
