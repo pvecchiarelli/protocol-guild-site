@@ -147,16 +147,16 @@ const LogoRow: FC<{ title: string; items: typeof perks }> = ({ title, items }) =
 const Header: FC = () => (
   <div className="flex flex-col gap-4">
     <h2 className="text-3xl font-bold leading-[1.1] text-[var(--gray-dark)]">
-      Partner perks
+      In-Kind Donations
     </h2>
     <p className="text-lg leading-[24px] text-[var(--gray-dark)]">
-      Protocol Guild partners offer complimentary benefits to active guild members — from conference tickets to hardware wallets.
+      While token donations help fund Ethereum's core protocol contributors directly, we also welcome non-financial contributions - gifts or perks ranging from conference tickets to hardware wallets. Anything that helps reward the individuals building Ethereum's core protocol is welcome.
     </p>
     <a
-      href="mailto:contact@protocolguild.org?subject=Member%20Perks%20Inquiry"
+      href="mailto:contact@protocolguild.org?subject=In-Kind%20Donation%20Inquiry"
       className="text-sm text-[var(--gray-dark)] hover:opacity-70 underline w-fit"
     >
-      Offer Protocol Guild Members a perk →
+      Ready to donate a gift? Contact us!
     </a>
   </div>
 )
