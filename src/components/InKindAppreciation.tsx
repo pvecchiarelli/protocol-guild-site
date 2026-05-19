@@ -49,6 +49,15 @@ const DappConLogo: FC = () => (
   </svg>
 )
 
+const EthGlobalLogo: FC = () => (
+  <svg viewBox="0 0 140 36" xmlns="http://www.w3.org/2000/svg" aria-label="ETHGlobal Cannes" className="h-full w-auto">
+    <rect x="0" y="4" width="28" height="28" rx="6" fill="#111111" />
+    <text x="4" y="23" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="900" fontSize="14" fill="white">EG</text>
+    <text x="36" y="17" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="700" fontSize="12" letterSpacing="-0.2" fill="#111111">ETHGlobal</text>
+    <text x="36" y="30" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="500" fontSize="11" letterSpacing="0.5" fill="#8FA0AB">CANNES</text>
+  </svg>
+)
+
 /* ─── Audit / infrastructure logos ──────────────────────────────────────── */
 
 const SigmaPrimeLogo: FC = () => (
@@ -111,11 +120,12 @@ const AgoraLogo: FC = () => (
 /* ─── Data ────────────────────────────────────────────────────────────────── */
 
 const perks = [
-  { id: 'ethcc',     Logo: EthCCLogo,     label: 'Conference ticket' },
-  { id: 'devcon',    Logo: DevconLogo,    label: 'Conference ticket' },
-  { id: 'ethprague', Logo: EthPragueLogo, label: 'Conference ticket' },
-  { id: 'dappcon',   Logo: DappConLogo,   label: 'Conference ticket' },
-  { id: 'keycard',   Logo: KeycardLogo,   label: 'Hardware wallet'   },
+  { id: 'ethcc',      Logo: EthCCLogo,     label: 'Conference ticket' },
+  { id: 'devcon',     Logo: DevconLogo,    label: 'Conference ticket' },
+  { id: 'ethprague',  Logo: EthPragueLogo, label: 'Conference ticket' },
+  { id: 'dappcon',    Logo: DappConLogo,   label: 'Conference ticket' },
+  { id: 'ethglobal',  Logo: EthGlobalLogo, label: 'Conference ticket' },
+  { id: 'keycard',    Logo: KeycardLogo,   label: 'Hardware wallet'   },
 ]
 
 const audits = [
@@ -149,9 +159,9 @@ const Header: FC = () => (
     <h2 className="text-3xl font-bold leading-[1.1] text-[var(--gray-dark)]">
       In-Kind Donations
     </h2>
-    <p className="text-lg leading-[24px] text-[var(--gray-dark)]">
+    <h2 className="!text-lg !font-normal !leading-[24px] !text-[var(--gray-dark)]">
       While token donations help fund Ethereum's core protocol contributors directly, we also welcome non-financial contributions - gifts or perks ranging from conference tickets to hardware wallets. Anything that helps reward the individuals building Ethereum's core protocol is welcome.
-    </p>
+    </h2>
     <a
       href="mailto:contact@protocolguild.org?subject=In-Kind%20Donation%20Inquiry"
       className="text-sm text-[var(--gray-dark)] hover:opacity-70 underline w-fit"
@@ -164,7 +174,7 @@ const Header: FC = () => (
 const Logos: FC = () => (
   <div className="flex flex-col gap-6">
     <LogoRow title="MEMBER PERKS" items={perks} />
-    <LogoRow title="AUDITS & REVIEWS" items={audits} />
+    <LogoRow title="AUDITS & SOFTWARE" items={audits} />
   </div>
 )
 
