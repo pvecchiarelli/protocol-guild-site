@@ -300,8 +300,11 @@ const Donate: FC = () => {
       <Section background="white" divider="var(--brand-primary)" line={true}>
         <Section.Row align="start">
           <Grid columns={12} className="py-16">
-            <Grid.Item span={12}>
-              <InKindAppreciation />
+            <Grid.Item span={6} className="flex flex-col gap-4">
+              <InKindAppreciation.Header />
+            </Grid.Item>
+            <Grid.Item span={6} className="flex flex-col gap-6">
+              <InKindAppreciation.Logos />
             </Grid.Item>
           </Grid>
         </Section.Row>
