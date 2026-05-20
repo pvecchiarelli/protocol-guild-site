@@ -15,6 +15,7 @@ import authorImage from '../assets/images/EigenLayer.png'
 import DonationWidget from '../components/DonationWidget'
 import PartnerProgramsSection from '../components/PartnerProgramsSection'
 import InKindAppreciation from '../components/InKindAppreciation'
+import InAppContributions from '../components/InAppContributions'
 
 const Donate: FC = () => {
   const [currentQuote, setCurrentQuote] = useState(0)
@@ -72,6 +73,16 @@ const Donate: FC = () => {
                   </div>
                 </div>
               ))}
+            </Grid.Item>
+          </Grid>
+        </Section.Row>
+      </Section>
+
+      <Section background="white" divider="var(--brand-primary)" line={true}>
+        <Section.Row align="start">
+          <Grid columns={12} className="py-16">
+            <Grid.Item span={12}>
+              <InAppContributions />
             </Grid.Item>
           </Grid>
         </Section.Row>
