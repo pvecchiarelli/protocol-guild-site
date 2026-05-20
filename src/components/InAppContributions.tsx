@@ -48,7 +48,7 @@ const InAppContributions: FC = () => (
   <div className="flex flex-col gap-6">
     <div className="flex flex-col gap-2">
       <h2 className="text-3xl font-bold leading-[1.1] text-[var(--gray-dark)]">
-        Contribute as you go
+        Contribute through partners
       </h2>
       <h2 className="!text-lg !font-normal !leading-[24px] !text-[var(--gray-dark)]">
         Support Protocol Guild through everyday actions — no one-time donation required.

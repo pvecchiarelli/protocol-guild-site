@@ -81,16 +81,6 @@ const Donate: FC = () => {
       <Section background="white" divider="var(--brand-primary)" line={true}>
         <Section.Row align="start">
           <Grid columns={12} className="py-16">
-            <Grid.Item span={12}>
-              <InAppContributions />
-            </Grid.Item>
-          </Grid>
-        </Section.Row>
-      </Section>
-
-      <Section background="white" divider="var(--brand-primary)" line={true}>
-        <Section.Row align="start">
-          <Grid columns={12} className="py-16">
             <Grid.Item span={6} className="flex flex-col gap-4">
               <h2 className="col-span-3 text-3xl font-bold leading-[1.1] text-[var(--gray-dark)] mb-4">
                 {donateContent.pledge.title}
@@ -356,6 +346,16 @@ const Donate: FC = () => {
                 type="Donors"
                 className="max-w-[100%] lg:max-w-[90%] mx-auto"
               />
+            </Grid.Item>
+          </Grid>
+        </Section.Row>
+      </Section>
+
+      <Section background="white" divider="var(--brand-primary)" line={true}>
+        <Section.Row align="start">
+          <Grid columns={12} className="py-16">
+            <Grid.Item span={12}>
+              <InAppContributions />
             </Grid.Item>
           </Grid>
         </Section.Row>
