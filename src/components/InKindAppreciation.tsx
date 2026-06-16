@@ -112,20 +112,20 @@ const AgoraLogo: FC = () => (
 /* ─── Data ────────────────────────────────────────────────────────────────── */
 
 const perks = [
-  { id: 'ethcc',      Logo: EthCCLogo,     label: 'Conference ticket' },
-  { id: 'devcon',     Logo: DevconLogo,    label: 'Conference ticket' },
-  { id: 'ethprague',  Logo: EthPragueLogo, label: 'Conference ticket' },
-  { id: 'dappcon',    Logo: DappConLogo,   label: 'Conference ticket' },
-  { id: 'ethglobal',  Logo: EthGlobalLogo, label: 'Conference ticket' },
-  { id: 'keycard',    Logo: KeycardLogo,   label: 'Hardware wallet'   },
+  { id: 'ethcc',      Logo: EthCCLogo,     url: 'https://ethcc.io'          },
+  { id: 'devcon',     Logo: DevconLogo,    url: 'https://devcon.org'         },
+  { id: 'ethprague',  Logo: EthPragueLogo, url: 'https://ethprague.com'      },
+  { id: 'dappcon',    Logo: DappConLogo,   url: 'https://dappcon.io'         },
+  { id: 'ethglobal',  Logo: EthGlobalLogo, url: 'https://ethglobal.com'      },
+  { id: 'keycard',    Logo: KeycardLogo,   url: 'https://keycard.tech'       },
 ]
 
 const audits = [
-  { id: 'sigmaprime', Logo: SigmaPrimeLogo, label: 'Security review'    },
-  { id: 'dedaub',     Logo: DedaubLogo,     label: 'Security audit'     },
-  { id: 'zellic',     Logo: ZellicLogo,     label: 'Security audit'     },
-  { id: 'redguild',   Logo: RedGuildLogo,   label: 'Security audit'     },
-  { id: 'agora',      Logo: AgoraLogo,      label: 'DAO implementation' },
+  { id: 'sigmaprime', Logo: SigmaPrimeLogo, url: 'https://sigmaprime.io'    },
+  { id: 'dedaub',     Logo: DedaubLogo,     url: 'https://dedaub.com'       },
+  { id: 'zellic',     Logo: ZellicLogo,     url: 'https://zellic.io'        },
+  { id: 'redguild',   Logo: RedGuildLogo,   url: 'https://theredguild.org'  },
+  { id: 'agora',      Logo: AgoraLogo,      url: 'https://agora.xyz'        },
 ]
 
 /* ─── Sub-components ─────────────────────────────────────────────────────── */
@@ -133,14 +133,17 @@ const audits = [
 const LogoRow: FC<{ title: string; items: typeof perks }> = ({ title, items }) => (
   <div className="flex flex-col gap-1">
     <p className="text-[15px] font-medium text-[var(--gray-dark)]">{title}</p>
-    <div className="flex flex-wrap gap-x-10 gap-y-6 items-start py-4">
-      {items.map(({ id, Logo, label }) => (
-        <div key={id} className="flex flex-col gap-2 w-28">
-          <div className="h-8 flex items-center">
-            <Logo />
-          </div>
-          <span className="text-xs text-[var(--gray-dark)]">{label}</span>
-        </div>
+    <div className="flex flex-wrap gap-x-8 gap-y-6 items-center py-4">
+      {items.map(({ id, Logo, url }) => (
+        <a
+          key={id}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center h-10 hover:opacity-70 transition-opacity"
+        >
+          <Logo />
+        </a>
       ))}
     </div>
   </div>
