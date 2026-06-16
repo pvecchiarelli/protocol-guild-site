@@ -1,11 +1,13 @@
 import { FC } from 'react'
 import keycardImg from '../assets/images/donors/keycardblack.png'
-import ethccImg from '../assets/images/donors/ethcc.jpg'
 
 /* ─── Conference / hardware logos ────────────────────────────────────────── */
 
 const EthCCLogo: FC = () => (
-  <img src={ethccImg} alt="EthCC" className="h-full w-auto" />
+  <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-label="EthCC" className="h-full w-auto">
+    <text x="0" y="26" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="900" fontSize="20" letterSpacing="-0.5" fill="#111111">Eth</text>
+    <text x="40" y="26" fontFamily="system-ui,-apple-system,sans-serif" fontWeight="900" fontSize="20" letterSpacing="-0.5" fill="#7B3FE4">CC</text>
+  </svg>
 )
 
 const EthPragueLogo: FC = () => (
