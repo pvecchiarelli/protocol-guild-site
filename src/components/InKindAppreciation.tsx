@@ -30,7 +30,7 @@ const DevconLogo: FC = () => (
 )
 
 const KeycardLogo: FC = () => (
-  <img src={keycardImg} alt="Keycard" className="h-full w-auto" />
+  <img src={keycardImg} alt="Keycard" className="h-5 md:h-7 w-auto max-w-[100px]" />
 )
 
 const DappConLogo: FC = () => (
