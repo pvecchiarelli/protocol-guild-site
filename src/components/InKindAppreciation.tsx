@@ -9,27 +9,43 @@ const KeycardLogo: FC = () => (
 
 /* ─── Data ────────────────────────────────────────────────────────────────── */
 
-const perks = [
-  { id: 'keycard', Logo: KeycardLogo, url: 'https://keycard.tech' },
+type Item = { id: string; name: string; url: string; Logo?: FC }
+
+const perks: Item[] = [
+  { id: 'ethcc',     name: 'EthCC',        url: 'https://ethcc.io'       },
+  { id: 'devcon',    name: 'Devcon',        url: 'https://devcon.org'     },
+  { id: 'ethprague', name: 'ETH Prague',    url: 'https://ethprague.com'  },
+  { id: 'dappcon',   name: 'DappCon',       url: 'https://dappcon.io'     },
+  { id: 'ethglobal', name: 'ETHGlobal',     url: 'https://ethglobal.com'  },
+  { id: 'keycard',   name: 'Keycard',       url: 'https://keycard.tech',  Logo: KeycardLogo },
 ]
 
-const audits: typeof perks = []
+const audits: Item[] = [
+  { id: 'sigmaprime', name: 'Sigma Prime',  url: 'https://sigmaprime.io'    },
+  { id: 'dedaub',     name: 'Dedaub',       url: 'https://dedaub.com'       },
+  { id: 'zellic',     name: 'Zellic',       url: 'https://zellic.io'        },
+  { id: 'redguild',   name: 'Red Guild',    url: 'https://theredguild.org'  },
+  { id: 'agora',      name: 'Agora',        url: 'https://agora.xyz'        },
+]
 
 /* ─── Sub-components ─────────────────────────────────────────────────────── */
 
-const LogoRow: FC<{ title: string; items: typeof perks }> = ({ title, items }) => (
+const LogoRow: FC<{ title: string; items: Item[] }> = ({ title, items }) => (
   <div className="flex flex-col gap-1">
     <p className="text-[15px] font-medium text-[var(--gray-dark)]">{title}</p>
-    <div className="flex flex-wrap gap-x-8 gap-y-6 items-center py-4">
-      {items.map(({ id, Logo, url }) => (
+    <div className="flex flex-wrap gap-x-8 gap-y-4 items-center py-4">
+      {items.map(({ id, name, url, Logo }) => (
         <a
           key={id}
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center h-10 md:h-14 hover:opacity-70 transition-opacity"
+          className="flex items-center justify-center hover:opacity-70 transition-opacity"
         >
-          <Logo />
+          {Logo
+            ? <Logo />
+            : <span className="text-sm font-medium text-[var(--gray-dark)]">{name}</span>
+          }
         </a>
       ))}
     </div>
@@ -58,8 +74,8 @@ const Header: FC = () => (
 
 const Logos: FC = () => (
   <div className="flex flex-col gap-6">
-    {perks.length > 0 && <LogoRow title="MEMBER PERKS" items={perks} />}
-    {audits.length > 0 && <LogoRow title="AUDITS & SOFTWARE" items={audits} />}
+    <LogoRow title="MEMBER PERKS" items={perks} />
+    <LogoRow title="AUDITS & SOFTWARE" items={audits} />
   </div>
 )
 
