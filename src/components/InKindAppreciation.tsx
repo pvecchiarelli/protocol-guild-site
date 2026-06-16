@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import keycardImg from '../assets/images/donors/keycardblack.png'
+import keycardImg from '../assets/images/donors/keycard.svg'
 
 /* ─── Conference / hardware logos ────────────────────────────────────────── */
 
